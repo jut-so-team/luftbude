@@ -30,32 +30,87 @@
 ul{
 	list-style: none;
 }
+ul.list li::before{
+	content: "→";
+	color: var(--green);
+	margin-right: 4px;
+}
 /*************************************
 		Backgrounds
 *************************************/
+.bg_noise{
+	background: url('images/body-bg.png') repeat;
+}
 .bg_white{
     background: var(--white) !important;
 }
-.bg_gradiant{
+.bg_gradient{
     background: var(--section-gradient) !important;
 }
-.section_wrapper.bg_gradiant_overlay{
+.bg_hero1{
+	background: url('images/hero1-bg.png') no-repeat center bottom;
+	background-size: cover;
+}
+.bg_hero2 .hero_holder{
+	background: url('images/hero2-bg.png') no-repeat center center;
+	background-size: cover;
+}
+.bg_hero3{
+	background: url('images/hero3-bg.png') no-repeat center center;
+	background-size: cover;
+}
+.bg_floor_plan{
+	background: url('images/floor-plan.png') no-repeat top center;
+	background-size: cover;
+}
+.bg_floor_plan2{
+	background: url('images/floor-plan2.png') no-repeat center 60px;
+	background-size: cover;
+}
+.section_wrapper.bg_gradient_overlay{
     position: relative;
     background: var(--section-gradient) !important;
     padding: 0 0 60px;
     margin: 60px 0 0;
 }
-.section_wrapper.bg_gradiant_overlay .container{
+.section_wrapper.bg_gradient_overlay .container{
     width: 100%;
     max-width: 100%;
 }
-.bg_gradiant_overlay .heading_teaser{
+.bg_gradient_overlay .heading_teaser{
     background: var(--white);
     padding-bottom: 150px;
 }
-.bg_gradiant_overlay .move_top{
+.bg_gradient_overlay .move_top{
     max-width: 1140px;
     margin: -150px auto 0;
+}
+@media (max-width: 767px) {
+	
+	.bg_hero1{
+		background: url('images/hero1-bg-mob.png') no-repeat center bottom;
+		background-size: contain;
+	}
+	.bg_hero2 .hero_holder{
+		background: url('images/hero2-bg-mob.png') no-repeat center center;
+		background-size: cover;
+	}
+	.bg_hero3{
+		background: none !important;
+	}
+	.bg_hero3 .hero3_text_holder{
+		background: url('images/hero3-bg-mob.png') no-repeat center center;
+		background-size: cover;
+	}	
+	.bg_floor_plan{
+		background: url('images/floor-plan-mob.png') no-repeat center 225px;
+		background-size: cover;
+		
+	}
+	.bg_floor_plan2{
+		background: url('images/floor-plan2-mob.png') no-repeat center center;
+		background-size: contain;
+	}
 }
 /*************************************
 		Custom Font Include
@@ -266,13 +321,46 @@ ul li {
 	text-align: justify;
 }
 /*************************************
+		Hero Homepage
+*************************************/
+.section_wrapper.hero1 {
+	height: 100vh;
+	padding: 65px 30px;
+	margin-bottom: 150px;
+}
+.hero1 .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 48px;
+}
+.hero1 .container .heading_teaser{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px;
+	gap: 20px;
+	max-width: 770px;
+}
+.hero1 .container .buttons_wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 13px;
+}
+@media (max-width: 767px) {
+	.section_wrapper.hero1 {
+		margin-bottom: 60px;
+	}
+}
+/*************************************
 		Hero Page2
 *************************************/
 .hero2{
     padding: 0 !important;
 }
 .hero2 .hero_holder{
-    background: var(--section-gradient) !important;
     padding: 76px 0 280px;
 }
 .hero2 .services_cards{
@@ -288,6 +376,106 @@ ul li {
         padding: 25px 20px 40px;
     }
 }
+/*************************************
+		Hero Page3
+*************************************/
+.hero3{
+    padding: 0 !important;
+	margin: 0 0 120px;
+}
+.hero3 .hero3_container{
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 67px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.hero3 .hero3_text_holder{
+	width: 40%;
+}
+.hero3 .hero3_text_holder .heading_teaser{
+	text-align: left;
+}
+.hero3 .hero_boxes_holder{
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	width: 50%;
+	margin-bottom: -120px;
+}
+.hero3 .hero_boxes_holder .left_cards,
+.hero3 .hero_boxes_holder .right_cards{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.hero3 .hero_boxes_holder h3{
+	margin: 0;
+}
+.hero_boxes_holder .service {
+	display: flex;
+	flex-direction: column;
+    gap: 10px;
+    width: 100%;
+	border-radius: 6px;
+    overflow: hidden;
+    background: var(--white);
+	box-shadow: var(--shadow-02);
+}
+
+.hero_boxes_holder  .content_wrapper{
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	gap: 12px;
+	padding: 24px 40px 40px;
+}
+.hero_boxes_holder .service .icon {
+	padding: 14px 40px;
+	background: var(--grey-100);
+    text-align: center;
+}
+.hero_boxes_holder .service .content {
+	position: relative;
+    display: flex;
+	gap: 12px;
+    flex-direction: column;
+    height: 100%;
+}
+.hero_boxes_holder .cta_service{
+	display: flex;
+	justify-content: center;
+}
+@media (max-width: 767px) {
+	.hero3{
+		background: none !important;
+	}
+	.hero3 .hero3_text_holder{
+		width: 100%;
+		padding: 45px 20px;
+		text-align: center;
+	}
+	.hero3 .hero3_text_holder .heading_teaser{
+		text-align: center;
+	}
+	.hero3 .hero3_container{
+		padding: 0;
+		flex-direction: column;
+	}
+	.hero3 .hero_boxes_holder{
+		width: 100%;
+		flex-direction: column;
+		padding: 0 67px;
+		margin: -20px 0 0;
+	}
+	.hero3 .hero_boxes_holder .left_cards,
+	.hero3 .hero_boxes_holder .right_cards{
+		width: 100%;
+	}
+}
+
 /*************************************
 		Section Wrapper
 *************************************/
@@ -358,6 +546,31 @@ ul li {
 	.services_cards .service{
 		width: 100% !important;
 	}
+}
+/*************************************
+		Dual Button and Links
+*************************************/
+.dual_button_links{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: 500px;
+	margin: 0 auto;
+	justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.dual_button_links .column{
+	width: 45%;
+}
+a.link{
+	text-decoration: none;
+	color: var(--grey-800);
+}
+a.link::after{
+	content: '→';
+	margin-left: 4px;
 }
 /*************************************
 			Darum Item
@@ -937,11 +1150,6 @@ ul li {
 .know_how_wrapper .links li{
 	width: calc(50% - 10px);
 }
-.know_how_wrapper .links li::before{
-	content: "→";
-	color: var(--green);
-	margin-right: 4px;
-}
 
 @media (max-width: 767px) {
 	.know_how_wrapper {
@@ -982,7 +1190,7 @@ ul li {
 	align-items: flex-start;
 	padding: 60px;
 	gap: 40px;
-	background: var(--white);
+	background: var(--white) url('images/dealers-images-bg.png') 40px 40px no-repeat;
 	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25), 0px 10px 15px rgba(0, 0, 0, 0.1);
 	border-radius: 12px;
 }
@@ -1012,6 +1220,11 @@ ul li {
 		flex-direction: column;
 		padding: 40px 30px;
 		gap: 32px;
+		background: var(--white);
+	}
+	.dealers_wrapper .dealer_images{
+		background: var(--white) url('images/dealers-images-bg.png') center center no-repeat;
+		background-size: cover;
 	}
 	.dealers_wrapper .dealer_images,
     .dealers_wrapper .dealer_text{
