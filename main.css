@@ -47,7 +47,7 @@ body {
 	font-size: clamp(14px, calc(0.875rem + ((1vw - 4.8px) * 0.4545)), 17px);
 	line-height: 170%;
 	font-weight: 450;
-	color: var(--grey-950);
+	color: var(--grey-800);
 }
 
 h1 {
